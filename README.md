@@ -1,5 +1,5 @@
 # FRED2Plot
-FRamework for Experimental Data to plot (FRED2Plot)
+FRamework for Experimental Data to Plot (FRED2Plot)
 
 ## Description
 The framework for experimental data to plot (FRED2Plot), is designed to automatically process XRD, PDF, NMR, Raman, FT-IR & electrochemical Data and, if wanted, uploads them to Kadi4mat.
@@ -14,11 +14,11 @@ Within a particular ecosystem, there may be a common way of installing things, s
 Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
 
 ## Roadmap
-Integration of a UI made with TKinter
-Integration of all scripts into this UI
-Integration of Kadi4mat
-Integration of users (Kadi4mat)
-Integration of user collections and linking (Kadi4mat)
+- Integration of a UI made with TKinter
+- Integration of all scripts into this UI
+- Integration of Kadi4mat
+- Integration of users (Kadi4mat)
+- Integration of user collections and linking (Kadi4mat)
 
 ## Contributing
 State if you are open to contributions and what your requirements are for accepting them.
@@ -28,12 +28,12 @@ You can also document commands to lint the code or run tests. These steps help t
 ## Authors and acknowledgment
 Main author: Adam Reupert
 
-Thanks to [Stack Overflow](https://stackoverflow.com/). Whenever I was stuck at a problem, it helped me to solve it.
+Thanks to [Stack Overflow](https://stackoverflow.com/). It helped me solving problems I even didn't know i had.
 
 ## License
 [CC BY-NC](https://creativecommons.org/licenses/by-nc/4.0/legalcode) is applied for this project meaning you are free to share and adapt the material under the following terms:
-Attribution — You must give appropriate credit by referencing to this [project](https://gitlab.com/Sumada/fred2plot), provide a link to the [license](https://creativecommons.org/licenses/by-nc/4.0/legalcode), and indicate if changes were made. 
-NonCommercial — You may not use the material for commercial purposes. 
+- Attribution — You must give appropriate credit by referencing to this [project](https://gitlab.com/Sumada/fred2plot), provide a link to the [license](https://creativecommons.org/licenses/by-nc/4.0/legalcode), and indicate if changes were made. 
+- NonCommercial — You may not use the material for commercial purposes. 
 
 ## Project status
 This project is still in development!
@@ -74,10 +74,3 @@ Use the built-in continuous integration in GitLab.
 - [ ] [Set up protected environments](https://gitlab.com/-/experiment/new_project_readme_content:d7aed7a57e88ccd6d1057a2f5a09905a?https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
 
 ***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!).  Thank you to [makeareadme.com](https://gitlab.com/-/experiment/new_project_readme_content:d7aed7a57e88ccd6d1057a2f5a09905a?https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
