@@ -8,7 +8,8 @@ The framework for experimental data to plot (FRED2Plot), is designed to automati
 Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
 
 ## Installation
-All depending packages, needed to run those python scripts, are collected in the requirements.txt. To install them automatically just run the following command in our command line interface. Pip and Python (preferably pip3/Python3) has to be installed beforehand!
+All depending packages, needed to run those python scripts, are collected in the requirements.txt. To install them automatically just run the following command in your command line interface. 
+Pip and Python (preferably pip3/Python3) has to be installed beforehand!
 
 ```
 cd fred2plot
@@ -42,40 +43,4 @@ Thanks to [Stack Overflow](https://stackoverflow.com/). It helped me solving pro
 
 ## Project status
 This project is still in development!
-
-
-## Add your files
-
-- [ ] [Create](https://gitlab.com/-/experiment/new_project_readme_content:d7aed7a57e88ccd6d1057a2f5a09905a?https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://gitlab.com/-/experiment/new_project_readme_content:d7aed7a57e88ccd6d1057a2f5a09905a?https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://gitlab.com/-/experiment/new_project_readme_content:d7aed7a57e88ccd6d1057a2f5a09905a?https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
-```
-cd existing_repo
-git remote add origin https://gitlab.com/Sumada/fred2plot.git
-git branch -M main
-git push -uf origin main
-```
-
-## Integrate with your tools
-
-- [ ] [Set up project integrations](https://gitlab.com/-/experiment/new_project_readme_content:d7aed7a57e88ccd6d1057a2f5a09905a?https://gitlab.com/Sumada/fred2plot/-/settings/integrations)
-
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://gitlab.com/-/experiment/new_project_readme_content:d7aed7a57e88ccd6d1057a2f5a09905a?https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://gitlab.com/-/experiment/new_project_readme_content:d7aed7a57e88ccd6d1057a2f5a09905a?https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://gitlab.com/-/experiment/new_project_readme_content:d7aed7a57e88ccd6d1057a2f5a09905a?https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://gitlab.com/-/experiment/new_project_readme_content:d7aed7a57e88ccd6d1057a2f5a09905a?https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://gitlab.com/-/experiment/new_project_readme_content:d7aed7a57e88ccd6d1057a2f5a09905a?https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://gitlab.com/-/experiment/new_project_readme_content:d7aed7a57e88ccd6d1057a2f5a09905a?https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://gitlab.com/-/experiment/new_project_readme_content:d7aed7a57e88ccd6d1057a2f5a09905a?https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://gitlab.com/-/experiment/new_project_readme_content:d7aed7a57e88ccd6d1057a2f5a09905a?https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://gitlab.com/-/experiment/new_project_readme_content:d7aed7a57e88ccd6d1057a2f5a09905a?https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://gitlab.com/-/experiment/new_project_readme_content:d7aed7a57e88ccd6d1057a2f5a09905a?https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
 ***
