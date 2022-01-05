@@ -6,6 +6,7 @@ The framework for experimental data to plot (FRED2Plot), is designed to automati
 
 ## Visuals
 Examples of plots created using FRED2plot and personal experimental data created in our laboratories funded by POLiS.
+
 ![alt text](Gitlab/logo.png "Preview UI")
 
 
@@ -20,6 +21,7 @@ pip3 install -r requirements.txt
 
 ## Usage
 Examples will follow once the user interface is working out. Here is a small preview of the current state:
+
 ![alt text](Gitlab/logo.png "Preview UI")
 
 
