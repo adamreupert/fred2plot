@@ -110,8 +110,8 @@ def plot():
             #ax1.text(-0.08, 0.97, string.ascii_uppercase[0]+')', transform=ax1.transAxes, size=15)
     fig.subplots_adjust(hspace=0.25)
     exportpath = './'  
-    plt.savefig(exportpath + 'VS4_001_001_001_XRD.svg', dpi=300, bbox_inches='tight')
-    plt.savefig(exportpath + 'VS4_001_001_001_XRD.png', dpi=300, bbox_inches='tight')
+    plt.savefig(exportpath + 'multiplot_XRD.svg', dpi=300, bbox_inches='tight')
+    plt.savefig(exportpath + 'multiplot_XRD.png', dpi=300, bbox_inches='tight')
 #program
 rename_automatic_XRD()
 baseline_substraction_automatic_XRD()
