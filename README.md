@@ -22,7 +22,7 @@ pip3 install -r requirements.txt
 ## Usage
 Examples will follow once the user interface is working out. Here is a small preview of the current state:
 
-![alt text](Gitlab/logo.png "Preview UI")
+![alt text](Gitlab/example.png "Preview UI")
 
 
 ## Roadmap
