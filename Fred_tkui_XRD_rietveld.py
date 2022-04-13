@@ -13,7 +13,7 @@ def widgetui(mainwindow):
     widgetgrid = Frame(mainwindow)
     widgetgrid.grid(row=4, column=0, columnspan=7) # Columnspan has to be the same number as there are in total
     
-    Button_XRD_plot_widget = Button(widgetgrid, text='Plot', width=25, height = 1, state = "normal")
+    Button_XRD_plot_widget = Button(widgetgrid, text='Rietveld', width=25, height = 1, state = "normal")
     Button_XRD_plot_widget.grid(row=0,column=0,sticky=N+S)
     widgetgrid.grid_remove()
     return widgetgrid

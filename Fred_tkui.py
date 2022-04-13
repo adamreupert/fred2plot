@@ -11,7 +11,6 @@ from tkinter import Tk, Button, Radiobutton, Grid, N, S, W, E, Frame, IntVar, La
 
 #Import local files
 import Fred_tkui_XRD
-import Fred_tkui_XRD_plot
 
 def run():
     
