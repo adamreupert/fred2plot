@@ -54,7 +54,7 @@ def menus(mainwindow):
     
     
     # Return of 2nd layer subgrid to be callable from Fred_tkui class
-    return XRD_submethods_frame
+    return XRD_submethods_frame, plot_widgetgrid, rietveld_widgetgrid, pdf_widgetgrid
     
 
 

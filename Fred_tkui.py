@@ -19,7 +19,10 @@ def run():
     mainwindow.title('Fred2plot')
     mainwindow.minsize(1280, 720)
     
-    #Action Functions for Button press
+    # Creation of XRD menu & widgets
+    XRD_menus = Fred_tkui_XRD.menus(mainwindow)
+    
+    #Action Functions for Button press of Methods
     def button_push_test():
         print('Hello World!')
     
@@ -27,9 +30,10 @@ def run():
         print('Not implemented')
     
     def button_push_XRD():
-        print('XRD Method selected!')
+        print('XRD-method selected!')
         
         Button_XRD.configure(state="disable")
+        XRD_menus[0].grid()
         Button_NMR.configure(state="normal")
         Button_FT_IR.configure(state="normal")
         Button_Raman.configure(state="normal")
@@ -37,18 +41,27 @@ def run():
         Button_SEM_EDX.configure(state="normal")
         Button_EC.configure(state="normal")
         Button_Config.configure(state="normal")
-        XRD_menus.grid()
-        #XRD_Submenu.grid_remove()
-        #XRD_plotmenu = Fred_tkui_XRD.plotmenu(mainwindow)
-        #XRD_plotmenu.grid_remove()
+        
+    def button_push_NMR():
+        print('NMR-method selected!')
+        Button_XRD.configure(state="normal")
+        for widget in XRD_menus:
+            widget.grid_remove()
+        Button_NMR.configure(state="disable")
+        #NMR_menus.grid()
+        Button_FT_IR.configure(state="normal")
+        Button_Raman.configure(state="normal")
+        Button_TGA_DSC.configure(state="normal")
+        Button_SEM_EDX.configure(state="normal")
+        Button_EC.configure(state="normal")
+        Button_Config.configure(state="normal")
+        
             
     
     
-#Create Widgets
-    
-    #Methodsrow
+    #Create widgets / method buttons (1st layer)
     Button_XRD = Button(mainwindow, text='XRD', width=25, height = 1, state = "normal", command = button_push_XRD)
-    Button_NMR = Button(mainwindow, text='NMR', width=25, height = 1, state = "normal", command = button_push_dummy)
+    Button_NMR = Button(mainwindow, text='NMR', width=25, height = 1, state = "normal", command = button_push_NMR)
     Button_FT_IR = Button(mainwindow, text='FT-IR', width=25, height = 1, state = "normal", command = button_push_dummy)
     Button_Raman = Button(mainwindow, text='Raman', width=25, height = 1, state = "normal", command = button_push_dummy)
     Button_TGA_DSC = Button(mainwindow, text='TGA & DSC', width=25, height = 1, state = "normal", command = button_push_dummy)
@@ -56,9 +69,6 @@ def run():
     Button_EC = Button(mainwindow, text='EC', width=25, height = 1, state = "normal", command = button_push_dummy)
     Button_Config = Button(mainwindow, text='Config', width=25, height = 1, state = "normal", command = button_push_dummy)
     
-    #
-    Label_Titeltext = Label(mainwindow, text= "        ",font=('Helvetica bold',20))
-
     
     #Display in UI
     #Methodsrow
@@ -75,23 +85,64 @@ def run():
     mainwindow.grid_rowconfigure(2, minsize=25)    
     mainwindow.grid_rowconfigure(3, minsize=10)
     
-    # Creation of XRD menu & widgets
-    XRD_menus = Fred_tkui_XRD.menus(mainwindow)
-    
-    
-    
-    #Label_Titeltext.grid(row=1,column=0,sticky=N+S+E+W)
-    #tkwindow.grid_rowconfigure(2, minsize=15)
-    
-    #tkwindow.grid_rowconfigure(4, minsize=5)
-    #Button_Back.grid(row=5,column=0,sticky=N+S)
-    #tkwindow.grid_rowconfigure(6, minsize=5)
-    
     
     mainwindow.mainloop()
 
 if __name__ == "__main__":  
     run()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #puplic imports
