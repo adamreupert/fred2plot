@@ -12,7 +12,7 @@ Examples of plots created using FRED2Plot and personal experimental data created
 
 ## Installation
 All depending packages, needed to run those python scripts, are collected in the requirements.txt. To install them automatically just run the following command in your command line interface. 
-Pip and Python (preferably pip3/Python3) has to be installed beforehand!
+Pip3 and Python3 has to be installed beforehand!
 
 ```
 cd fred2plot
