@@ -6,7 +6,9 @@ Created on Wed Apr 13 17:19:54 2022
 """
 
 #Import the required libraries
-from tkinter import Tk, Button, Radiobutton, Grid, N, S, W, E, Frame, IntVar, Label, Checkbutton, Entry
+from tkinter import * 
+from matplotlib.figure import Figure
+from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg, NavigationToolbar2Tk)
 
 def widget_ui(mainwindow):
     
@@ -16,14 +18,72 @@ def widget_ui(mainwindow):
     
     
     #Create of widgets
-    Label_Titeltext = Label(widgetgrid, text= "    Woop Woop op    ", font=('Helvetica bold',20))
-    Button_XRD_plot_widget = Button(widgetgrid, text='Plot', width=25, height = 1, state = "normal")
     
+    Label_Titeltext = Label(widgetgrid, text= "    XRD-Menu    ", font=('Helvetica bold',20))
+    
+    
+    ###############    Graph    ###############
+    # the figure that will contain the plot
+    fig = Figure(figsize = (5, 5), dpi = 100)  
+    # list of squares
+    y = [-i**2 for i in range(101)]
+    # adding the subplot
+    plot1 = fig.add_subplot(111)
+    # plotting the graph
+    plot1.plot(y)
+    # creating the Tkinter canvas
+    # containing the Matplotlib figure
+    canvas = FigureCanvasTkAgg(fig, master = widgetgrid)     
+    canvas.draw()
+    # placing the canvas on the Tkinter window
+    canvas.get_tk_widget().grid(row=2, column=0, sticky=N+S+E+W)
+    # creating the Matplotlib toolbar
+    ###############    TOOLBAR    ###############
+    toolbarFrame = Frame(master=widgetgrid)
+    toolbarFrame.grid(row=3,column=0)
+    toolbar = NavigationToolbar2Tk(canvas, toolbarFrame)
+    
+    Button_XRD_plot_widget = Button(widgetgrid, text='Plot', width=25, height = 1, state = "normal")    
+    
+    #Label
+    #Label_plotformat_XRD = Label(XRD_frame, text='Which kind of plot do you want?')
+        
+    # #RadioButtons
+    # plotformat = IntVar()
+    # plotformat.set(1)
+    # Radiobutton_plotformat_XRD1 = Radiobutton(XRD_frame, text='Single-plot', variable=plotformat, value=1)
+    # Radiobutton_plotformat_XRD2 = Radiobutton(XRD_frame, text='Multi-plot', variable=plotformat, value=2) 
+    # Radiobutton_plotformat_XRD3 = Radiobutton(XRD_frame, text='Rietveld-plot', variable=plotformat, value=3) 
+      
+    # #Data processing options
+    # Label_option_XRD = Label(XRD_frame, text='Data processing options:')
+    # option_rename = IntVar()
+    # option_rename.set(1)
+    # Checkbox_option_rename_XRD = Checkbutton(XRD_frame, text="File reformatting", variable=option_rename)
+    # option_baseline = IntVar()
+    # option_baseline.set(1)
+    # Checkbox_option_baseline_XRD = Checkbutton(XRD_frame, text="Baseline substraction", variable=option_baseline, command=update_baseline_entry_plotoptions)
+    # option_norm = IntVar()
+    # option_norm.set(1)
+    # Checkbox_option_norm_XRD = Checkbutton(XRD_frame, text="Normalization", variable=option_norm)
+    # option_fileexp = IntVar()
+    # option_fileexp.set(1)
+    # Checkbox_option_fileexp_XRD = Checkbutton(XRD_frame, text="Export results as csv file", variable=option_fileexp)
+    # option_svgexp = IntVar()
+    # option_svgexp.set(1)
+    # Checkbox_option_svgexp_XRD = Checkbutton(XRD_frame, text="SVG image export", variable=option_svgexp)
+    # option_pngexp = IntVar()
+    # option_pngexp.set(0)
+    # Checkbox_option_pngexp_XRD = Checkbutton(XRD_frame, text="PNG image export", variable=option_pngexp)
     
     #Show in UI
-    Label_Titeltext.grid(row=0,column=0,sticky=N+S+E+W)
+    Label_Titeltext.grid(row=0,column=4,sticky=N+S+E+W)
     widgetgrid.grid_rowconfigure(1, minsize=10)
-    Button_XRD_plot_widget.grid(row=2,column=0,sticky=N+S)
+    Button_XRD_plot_widget.grid(row=4,column=0,sticky=N+S)
+    #Plotcanvas_XRD.get_tk_widget().grid(row=2, column=0, sticky=N+S+E+W)
+    
+    
+    
     
     
     #Make widget_ui grid invisible
@@ -90,49 +150,7 @@ def widget_ui(mainwindow):
 #             print("Image is exported as PNG") 
 #             #Fred_xrd_routine.plot()
 
-# #XRD-Menu and its widgets
-# Label_header_XRD = Label(XRD_frame, text='XRD-Menu')
-    
-# #Greate graph
-# x = ['Col A', 'Col B', 'Col C']
-# y = [50, 20, 80]
-# fig = plt.figure(figsize=(9,6.75))
-# plt.bar(x=x, height=y)
-# plt.xticks(x, rotation=90)
-# #Draw graph in TKinter
-# Plotcanvas_XRD = FigureCanvasTkAgg(fig, master=XRD_frame)
-# Plotcanvas_XRD.draw()
-    
-# #Label
-# Label_plotformat_XRD = Label(XRD_frame, text='Which kind of plot do you want?')
-    
-# #RadioButtons
-# plotformat = IntVar()
-# plotformat.set(1)
-# Radiobutton_plotformat_XRD1 = Radiobutton(XRD_frame, text='Single-plot', variable=plotformat, value=1)
-# Radiobutton_plotformat_XRD2 = Radiobutton(XRD_frame, text='Multi-plot', variable=plotformat, value=2) 
-# Radiobutton_plotformat_XRD3 = Radiobutton(XRD_frame, text='Rietveld-plot', variable=plotformat, value=3) 
-  
-# #Data processing options
-# Label_option_XRD = Label(XRD_frame, text='Data processing options:')
-# option_rename = IntVar()
-# option_rename.set(1)
-# Checkbox_option_rename_XRD = Checkbutton(XRD_frame, text="File reformatting", variable=option_rename)
-# option_baseline = IntVar()
-# option_baseline.set(1)
-# Checkbox_option_baseline_XRD = Checkbutton(XRD_frame, text="Baseline substraction", variable=option_baseline, command=update_baseline_entry_plotoptions)
-# option_norm = IntVar()
-# option_norm.set(1)
-# Checkbox_option_norm_XRD = Checkbutton(XRD_frame, text="Normalization", variable=option_norm)
-# option_fileexp = IntVar()
-# option_fileexp.set(1)
-# Checkbox_option_fileexp_XRD = Checkbutton(XRD_frame, text="Export results as csv file", variable=option_fileexp)
-# option_svgexp = IntVar()
-# option_svgexp.set(1)
-# Checkbox_option_svgexp_XRD = Checkbutton(XRD_frame, text="SVG image export", variable=option_svgexp)
-# option_pngexp = IntVar()
-# option_pngexp.set(0)
-# Checkbox_option_pngexp_XRD = Checkbutton(XRD_frame, text="PNG image export", variable=option_pngexp)
+
     
 # # Options for shaping the plot
 # Label_plotoptions_XRD = Label(XRD_frame, text='Plot options:')
