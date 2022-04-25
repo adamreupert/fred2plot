@@ -14,36 +14,34 @@ def widget_ui(mainwindow):
     
     #Create of 3rd-layer grid for the Plot widgets
     widgetgrid = Frame(mainwindow)
-    widgetgrid.grid(row=4, column=0, columnspan=7) # Columnspan has to be the same number as there are in total
-    
+    widgetgrid.grid(row=2, column=0, columnspan = 8, sticky=N+S+E+W) # Columnspan has to be the same number as there are in total
     
     #Create of widgets
+    #Title
+    Label_Titeltext = Label(widgetgrid, text= "XRD-Menu", font=('Helvetica 20 bold underline'))
     
-    Label_Titeltext = Label(widgetgrid, text= "    XRD-Menu    ", font=('Helvetica bold',20))
-    
-    
-    ###############    Graph    ###############
-    # the figure that will contain the plot
-    fig = Figure(figsize = (5, 5), dpi = 100)  
-    # list of squares
-    y = [-i**2 for i in range(101)]
-    # adding the subplot
+    #Left UI side
+    #BG Label
+    Label_leftBG = Label(widgetgrid, bg = "#a8a8a8")
+    # Graph
+    fig = Figure(figsize = (4, 4), dpi = 100)  
+    y = [-i for i in range(101)]
     plot1 = fig.add_subplot(111)
-    # plotting the graph
     plot1.plot(y)
-    # creating the Tkinter canvas
-    # containing the Matplotlib figure
+
     canvas = FigureCanvasTkAgg(fig, master = widgetgrid)     
     canvas.draw()
-    # placing the canvas on the Tkinter window
-    canvas.get_tk_widget().grid(row=2, column=0, sticky=N+S+E+W)
-    # creating the Matplotlib toolbar
-    ###############    TOOLBAR    ###############
     toolbarFrame = Frame(master=widgetgrid)
-    toolbarFrame.grid(row=3,column=0)
     toolbar = NavigationToolbar2Tk(canvas, toolbarFrame)
     
-    Button_XRD_plot_widget = Button(widgetgrid, text='Plot', width=25, height = 1, state = "normal")    
+    #Right UI side
+    Label_rightBG = Label(widgetgrid, bg = "#a8a8a8")
+    Label_plotSettings = Label(widgetgrid, text= "Plot-settings", font=('Helvetica 15 italic'))
+    
+    #Center UI side
+    Button_plot = Button(widgetgrid, text='Plot', width=25, height = 1, state = "normal")
+    
+    
     
     #Label
     #Label_plotformat_XRD = Label(XRD_frame, text='Which kind of plot do you want?')
@@ -77,13 +75,51 @@ def widget_ui(mainwindow):
     # Checkbox_option_pngexp_XRD = Checkbutton(XRD_frame, text="PNG image export", variable=option_pngexp)
     
     #Show in UI
-    Label_Titeltext.grid(row=0,column=4,sticky=N+S+E+W)
-    widgetgrid.grid_rowconfigure(1, minsize=10)
-    Button_XRD_plot_widget.grid(row=4,column=0,sticky=N+S)
-    #Plotcanvas_XRD.get_tk_widget().grid(row=2, column=0, sticky=N+S+E+W)
     
-    
-    
+    #Rough size configurations of columns
+    widgetgrid.grid_columnconfigure(0, minsize=20)
+    widgetgrid.grid_columnconfigure(1, minsize=50)
+    widgetgrid.grid_columnconfigure(2, minsize=50)
+    widgetgrid.grid_columnconfigure(3, minsize=50)
+    widgetgrid.grid_columnconfigure(4, minsize=50)
+    widgetgrid.grid_columnconfigure(5, minsize=50)
+    widgetgrid.grid_columnconfigure(6, minsize=50)
+    widgetgrid.grid_columnconfigure(7, minsize=50)
+    widgetgrid.grid_columnconfigure(8, minsize=50)
+    widgetgrid.grid_columnconfigure(9, minsize=50)
+    widgetgrid.grid_columnconfigure(10, minsize=50)
+    widgetgrid.grid_columnconfigure(11, minsize=50)
+    widgetgrid.grid_columnconfigure(12, minsize=50)
+    widgetgrid.grid_columnconfigure(13, minsize=20)
+    widgetgrid.grid_columnconfigure(14, minsize=20)
+    widgetgrid.grid_columnconfigure(15, minsize=50)
+    widgetgrid.grid_columnconfigure(16, minsize=50)
+    widgetgrid.grid_columnconfigure(17, minsize=50)
+    widgetgrid.grid_columnconfigure(18, minsize=50)
+    widgetgrid.grid_columnconfigure(19, minsize=50)
+    widgetgrid.grid_columnconfigure(20, minsize=50)
+    widgetgrid.grid_columnconfigure(21, minsize=50)
+    widgetgrid.grid_columnconfigure(22, minsize=50)
+    widgetgrid.grid_columnconfigure(23, minsize=50)
+    widgetgrid.grid_columnconfigure(24, minsize=50)
+    widgetgrid.grid_columnconfigure(25, minsize=50)
+    widgetgrid.grid_columnconfigure(26, minsize=50)
+    widgetgrid.grid_columnconfigure(27, minsize=20)
+    widgetgrid.grid_rowconfigure(0, minsize=10)
+    Label_Titeltext.grid(row=1,column=1, columnspan=26, sticky=N+S+E+W)
+    widgetgrid.grid_rowconfigure(2, minsize=10)
+    widgetgrid.grid_rowconfigure(3, minsize=20)
+    #Left side
+    Label_leftBG.grid(row=3,column=1, columnspan=12, rowspan=24, sticky=N+S+E+W)
+    canvas.get_tk_widget().grid(row=4, column=2, rowspan=20, columnspan=10)
+    toolbarFrame.grid(row=24,column=3, columnspan=8, sticky=N+S+E+W)
+    #Right side
+    Label_rightBG.grid(row=3,column=15, columnspan=12, rowspan=24, sticky=N+S+W+E)
+    Label_plotSettings.grid(row=4,column=16)
+    #Center side
+    widgetgrid.grid_rowconfigure(26, minsize=20)
+    widgetgrid.grid_rowconfigure(27, minsize=20)
+    Button_plot.grid(row=28,column=1, columnspan=26)
     
     
     #Make widget_ui grid invisible

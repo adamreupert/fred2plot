@@ -1,0 +1,21 @@
+XRD_plot;
+Plottype;
+single;TRUE
+multi;FALSE
+Processing;
+reformatting;TRUE
+baseline;TRUE
+normalize;TRUE
+export_csv;TRUE
+export_png;FALSE
+export_svg;TRUE
+lambda;1000000
+asym;0.001
+start_x;0
+end_x;60
+start_y;0
+end_y;1.5
+input_dir;Nothing selected
+exp_dir;Nothing selected
+XRD_rietveld;
+XRD_pdf;

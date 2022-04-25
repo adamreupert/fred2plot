@@ -17,9 +17,16 @@ def run():
     #Create an instance of tkinter frame
     mainwindow= Tk()
     mainwindow.title('Fred2plot')
-    mainwindow.minsize(1280, 720)
     
-    # Creation of XRD menu & widgets
+    mainwindow.minsize(1280, 720)
+    mainwindow.maxsize(1280, 720)
+    #Make widgets resizable by adding weight to the grid 
+    for rows in range(1):
+        mainwindow.grid_rowconfigure(rows, weight=0)
+        for columns in range(8):
+            mainwindow.grid_columnconfigure(columns, weight=1)
+            
+    # Call of 2nd-/widget-layer
     XRD_submenu = Fred_tkui_XRD.submenu_ui(mainwindow)
     
     #Action Functions for Button press of Methods
@@ -58,27 +65,27 @@ def run():
         
             
     #Create widgets / method buttons (1st layer)
-    Button_XRD = Button(mainwindow, text='XRD', width=25, height = 1, state = "normal", command = button_push_XRD)
-    Button_NMR = Button(mainwindow, text='NMR', width=25, height = 1, state = "normal", command = button_push_NMR)
-    Button_FT_IR = Button(mainwindow, text='FT-IR', width=25, height = 1, state = "normal", command = button_push_dummy)
-    Button_Raman = Button(mainwindow, text='Raman', width=25, height = 1, state = "normal", command = button_push_dummy)
-    Button_TGA_DSC = Button(mainwindow, text='TGA & DSC', width=25, height = 1, state = "normal", command = button_push_dummy)
-    Button_SEM_EDX = Button(mainwindow, text='SEM & EDX', width=25, height = 1, state = "normal", command = button_push_dummy)
-    Button_EC = Button(mainwindow, text='EC', width=25, height = 1, state = "normal", command = button_push_dummy)
-    Button_Config = Button(mainwindow, text='Config', width=25, height = 1, state = "normal", command = button_push_dummy)
+    Button_XRD = Button(mainwindow, text='XRD', width=20, height = 1, state = "normal", command = button_push_XRD)
+    Button_NMR = Button(mainwindow, text='NMR', width=20, height = 1, state = "normal", command = button_push_NMR)
+    Button_FT_IR = Button(mainwindow, text='FT-IR', width=20, height = 1, state = "normal", command = button_push_dummy)
+    Button_Raman = Button(mainwindow, text='Raman', width=20, height = 1, state = "normal", command = button_push_dummy)
+    Button_TGA_DSC = Button(mainwindow, text='TGA & DSC', width=20, height = 1, state = "normal", command = button_push_dummy)
+    Button_SEM_EDX = Button(mainwindow, text='SEM & EDX', width=20, height = 1, state = "normal", command = button_push_dummy)
+    Button_EC = Button(mainwindow, text='EC', width=20, height = 1, state = "normal", command = button_push_dummy)
+    Button_Config = Button(mainwindow, text='Config', width=20, height = 1, state = "normal", command = button_push_dummy)
     
     
     #Display in UI
-    Button_XRD.grid(row=1,column=0,sticky=N+S)
-    Button_NMR.grid(row=1,column=1,sticky=N+S)
-    Button_FT_IR.grid(row=1,column=2,sticky=N+S)
-    Button_Raman.grid(row=1,column=3,sticky=N+S)
-    Button_TGA_DSC.grid(row=1,column=4,sticky=N+S)
-    Button_SEM_EDX.grid(row=1,column=5,sticky=N+S)
-    Button_EC.grid(row=1,column=6,sticky=N+S)
-    Button_Config.grid(row=1,column=7,sticky=N+S)
-    mainwindow.grid_rowconfigure(2, minsize=25)    
-    mainwindow.grid_rowconfigure(3, minsize=10)
+    Button_XRD.grid(row=0,column=0,sticky=N+S+E+W)
+    Button_NMR.grid(row=0,column=1,sticky=N+S+E+W)
+    Button_FT_IR.grid(row=0,column=2,sticky=N+S+E+W)
+    Button_Raman.grid(row=0,column=3,sticky=N+S+E+W)
+    Button_TGA_DSC.grid(row=0,column=4,sticky=N+S+E+W)
+    Button_SEM_EDX.grid(row=0,column=5,sticky=N+S+E+W)
+    Button_EC.grid(row=0,column=6,sticky=N+S+E+W)
+    Button_Config.grid(row=0,column=7,sticky=N+S+E+W)    
+    mainwindow.grid_rowconfigure(1, minsize=25)    
+    mainwindow.grid_rowconfigure(2, minsize=10)
     
     
     mainwindow.mainloop()

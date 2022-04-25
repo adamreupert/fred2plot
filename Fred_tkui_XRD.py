@@ -16,6 +16,17 @@ import Fred_tkui_XRD_pdf
 
 def submenu_ui(mainwindow):    
     
+    
+    
+    #Create of 2nd-layer grid for the submenu grid
+    XRD_submethods_frame=Frame(mainwindow)
+    XRD_submethods_frame.grid(row=1, column=0, columnspan=3, sticky=N+S+E+W) # Columnspan has to be the same number as there are submenus  
+    #Make widgets resizable by adding weight to the grid 
+    for rows in range(1):
+        XRD_submethods_frame.grid_rowconfigure(rows, weight=0)
+        for columns in range(3):
+            XRD_submethods_frame.grid_columnconfigure(columns, weight=1)
+    
     #Call of 3rd-/widget-layer
     plot_widgetgrid = Fred_tkui_XRD_plot.widget_ui(mainwindow)
     rietveld_widgetgrid = Fred_tkui_XRD_rietveld.widget_ui(mainwindow)
@@ -39,21 +50,19 @@ def submenu_ui(mainwindow):
         pdf_widgetgrid.grid() 
     
     
-    #Create of 2nd-layer grid for the submenu grid
-    XRD_submethods_frame=Frame(mainwindow)
-    XRD_submethods_frame.grid(row=2, column=0, columnspan=3) # Columnspan has to be the same number as there are submenus    
+      
     
     
     #Create of Buttonwidgets
-    Button_XRD_plot = Button(XRD_submethods_frame, text='Plot', width=25, height = 1, state = "normal", command = plot)
-    Button_XRD_rietveld = Button(XRD_submethods_frame, text='Rietveld', width=25, height = 1, state = "normal", command = rietveld)
-    Button_XRD_pdf = Button(XRD_submethods_frame, text='PDF', width=25, height = 1, state = "normal", command = pdf)
+    Button_XRD_plot = Button(XRD_submethods_frame, text='Plot', width=20, height = 1, state = "normal", command = plot)
+    Button_XRD_rietveld = Button(XRD_submethods_frame, text='Rietveld', width=20, height = 1, state = "normal", command = rietveld)
+    Button_XRD_pdf = Button(XRD_submethods_frame, text='PDF', width=20, height = 1, state = "normal", command = pdf)
     
     
     #Show in UI
-    Button_XRD_plot.grid(row=0,column=0,sticky=N+S)
-    Button_XRD_rietveld.grid(row=0,column=1,sticky=N+S)
-    Button_XRD_pdf.grid(row=0,column=2,sticky=N+S)
+    Button_XRD_plot.grid(row=0,column=0,sticky=N+S+E+W)
+    Button_XRD_rietveld.grid(row=0,column=1,sticky=N+S+E+W)
+    Button_XRD_pdf.grid(row=0,column=2,sticky=N+S+E+W) 
     
     
     #Make submenu_ui grid invisible
