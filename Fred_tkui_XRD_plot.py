@@ -159,7 +159,7 @@ def widget_ui(mainwindow):
     widgetgrid.grid_rowconfigure(2, minsize=10)
     widgetgrid.grid_rowconfigure(3, minsize=20)
 #Left side
-    Label_leftBG.grid(row=3,column=1, columnspan=12, rowspan=24, sticky=N+S+E+W)
+    #Label_leftBG.grid(row=3,column=1, columnspan=12, rowspan=24, sticky=N+S+E+W)
     canvas.get_tk_widget().grid(row=4, column=2, rowspan=20, columnspan=10)
     toolbarFrame.grid(row=24,column=3, columnspan=8, sticky=N+S+E+W)
 #Right side
