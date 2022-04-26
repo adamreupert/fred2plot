@@ -14,10 +14,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy import sparse
 from scipy.sparse.linalg import spsolve
-
+from tkinter import Tk
+import tkinter.filedialog as fd
 
 #Code section ---------------------------------------------
-
 #Internal functions
 #Algorithm called "Asymmetric Least Squares Smoothing" by P. Eilers and H. Boelens, published in 2005.
 def baseline_als(y, lam, asymmetry, n_iter=10):
@@ -32,17 +32,20 @@ def baseline_als(y, lam, asymmetry, n_iter=10):
   return z
 
 #Different processing blocks XRD
-def rename_automatic_XRD():
-    importpath = './0_xy/'
+def rename_automatic_XRD(impdir, expdir):
+    importpath = impdir
     onlyfiles = [f for f in listdir(importpath) if isfile(join(importpath, f))]
     for f in onlyfiles:
         loaded_file = np.loadtxt('{}{}'.format(importpath, f))
-        exportpath = './' + str(f)
-        os.mkdir(exportpath[:-3])
-        exportpath = './' + str(f[:-3]) + '/rename/'
-        os.mkdir(exportpath[:-1])
+        exportpath = expdir + str(f)
+        if os.path.isdir(exportpath[:-3]) == 0:
+            os.mkdir(exportpath[:-3])
+        exportpath = expdir + str(f[:-3]) + '/rename/'
+        if os.path.isdir(exportpath[:-1]) == 0:
+            os.mkdir(exportpath[:-1])
         exportpath += '/'
         np.savetxt('{}{}.csv'.format(exportpath, os.path.splitext(f)[0]), loaded_file, delimiter = ';')      
+
 def baseline_substraction_automatic_XRD():     
     importpath = './0_xy/'
     onlyfiles = [placeholder for placeholder in listdir(importpath) if isfile(join(importpath, placeholder))]
@@ -61,7 +64,9 @@ def baseline_substraction_automatic_XRD():
             exportpath = './' + str(placeholder[:-3]) + '/baseline/'
             os.mkdir(exportpath[:-1])
             exportpath += '/'
-            np.savetxt('{}{}_basecorr.csv'.format(exportpath, os.path.splitext(f)[0]), result, delimiter = ';')    
+            np.savetxt('{}{}_basecorr.csv'.format(exportpath, os.path.splitext(f)[0]), result, delimiter = ';')
+            
+            
 def normalization_automatic_XRD():
     importpath = './0_xy/'
     onlyfiles = [placeholder for placeholder in listdir(importpath) if isfile(join(importpath, placeholder))]
@@ -98,10 +103,10 @@ def plot():
         for f in onlyfiles:
             loaded_file = np.loadtxt('{}{}'.format(importpath, f), delimiter = ';')
             f = f[:-27]
-            dataline = ax1.plot(loaded_file[:,0],(loaded_file[:,5]+addition),'-',linewidth=0.7, label = f)
+            dataline = ax1.plot(loaded_file[:,0],(loaded_file[:,5]+addition),'-', linewidth = 0.6, label = f)
             dataline
-            labeltext = f[3:]
-            ax1.set_xlim(4.5,35)
+            labeltext = f
+            #ax1.set_xlim(3,70)
             ax1.text((ax1.get_xlim()[1]-(ax1.get_xlim()[1]*0.025)), 0.5 + addition, labeltext, color= dataline[0].get_color(),ha = 'right')
             addition = addition - 1.1
             ax1.set_xlabel('2 Theta / [°]')
@@ -110,11 +115,42 @@ def plot():
             #ax1.text(-0.08, 0.97, string.ascii_uppercase[0]+')', transform=ax1.transAxes, size=15)
     fig.subplots_adjust(hspace=0.25)
     exportpath = './'  
-    plt.savefig(exportpath + 'multiplot_XRD.svg', dpi=300, bbox_inches='tight')
-    plt.savefig(exportpath + 'multiplot_XRD.png', dpi=300, bbox_inches='tight')
+    plt.savefig(exportpath + 'VS4_001_001_001_XRD_uncut.svg', dpi=100, bbox_inches='tight')
+    importpath = './0_xy/'
+    onlyfiles = [placeholder for placeholder in sorted(os.listdir(importpath)) if isfile(join(importpath, placeholder))]
+    addition = 0
+    fig, (ax1) = plt.subplots(nrows= 1, ncols= 1, figsize=(4.8,4.8))
+    for placeholder in onlyfiles:    
+        importpath = './' + str(placeholder[:-3]) + '/normal/'
+        onlyfiles = [f for f in sorted(os.listdir(importpath)) if isfile(join(importpath, f))]
+        for f in onlyfiles:
+            loaded_file = np.loadtxt('{}{}'.format(importpath, f), delimiter = ';')
+            f = f[:-27]
+            dataline = ax1.plot(loaded_file[:,0],(loaded_file[:,5]+addition),'-', linewidth = 0.6, label = f)
+            dataline
+            labeltext = f
+            ax1.set_xlim(5,40)
+            ax1.text((ax1.get_xlim()[1]-(ax1.get_xlim()[1]*0.025)), 0.5 + addition, labeltext, color= dataline[0].get_color(),ha = 'right')
+            addition = addition - 1.1
+            ax1.set_xlabel('2 Theta / [°]')
+            ax1.set_ylabel('Intensity / [a.u.]')
+            ax1.set(yticks=[])
+            #ax1.text(-0.08, 0.97, string.ascii_uppercase[0]+')', transform=ax1.transAxes, size=15)
+    fig.subplots_adjust(hspace=0.25)
+    exportpath = './'  
+    plt.savefig(exportpath + 'VS4_001_001_001_XRD_cut.svg', dpi=100, bbox_inches='tight')
+
+#def simple():
+    #print("Module loaded")
+
 #program
-rename_automatic_XRD()
-baseline_substraction_automatic_XRD()
-normalization_automatic_XRD()
-plot()
+
+#simple()
+
+#Call restriction for other scripts & when used directly -------
+if __name__ == "__main__":
+    rename_automatic_XRD()
+    baseline_substraction_automatic_XRD()
+    normalization_automatic_XRD()
+    plot()
 
