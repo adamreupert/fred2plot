@@ -52,8 +52,17 @@ def run():
     def button_push_NMR():
         print('NMR-method selected!')
         Button_XRD.configure(state="normal")
+        
         for widget in XRD_submenu:
-            widget.grid_remove()
+            
+            if isinstance(widget, Frame):
+                widget.grid_remove()
+            elif isinstance(widget, Button):
+                widget.configure(state="normal")
+            else:
+                print('Debug-error as return of Fred_tkui_XRD - submenu_ui included a type that is not a frame grid or a button')
+                print('Not code handeled instance is a ') 
+                print(type(widget))
         Button_NMR.configure(state="disable")
         #NMR_menus.grid()
         Button_FT_IR.configure(state="normal")

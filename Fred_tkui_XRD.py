@@ -35,22 +35,33 @@ def submenu_ui(mainwindow):
     #Visibility of 3rd- / widget-layer
     def plot():
         print('Pressed Plot')
+        Button_XRD_plot.configure(state="disable")
+        Button_XRD_rietveld.configure(state="normal")
+        Button_XRD_pdf.configure(state="normal")
         plot_widgetgrid.grid()
         rietveld_widgetgrid.grid_remove()
         pdf_widgetgrid.grid_remove()        
     def rietveld():
         print('Pressed Rietveld')
+        Button_XRD_plot.configure(state="normal")
+        Button_XRD_rietveld.configure(state="disable")
+        Button_XRD_pdf.configure(state="normal")
         plot_widgetgrid.grid_remove()
         rietveld_widgetgrid.grid()
         pdf_widgetgrid.grid_remove() 
     def pdf():
         print('Pressed PDF')
+        Button_XRD_plot.configure(state="normal")
+        Button_XRD_rietveld.configure(state="normal")
+        Button_XRD_pdf.configure(state="disable")
         plot_widgetgrid.grid_remove()
         rietveld_widgetgrid.grid_remove()
         pdf_widgetgrid.grid() 
     
     
       
+        
+        
     
     
     #Create of Buttonwidgets
@@ -68,5 +79,5 @@ def submenu_ui(mainwindow):
     #Make submenu_ui grid invisible
     #Return all grids including subgrids to be able to change visibility in 1st layer
     XRD_submethods_frame.grid_remove()
-    return XRD_submethods_frame, plot_widgetgrid, rietveld_widgetgrid, pdf_widgetgrid
+    return XRD_submethods_frame, plot_widgetgrid, rietveld_widgetgrid, pdf_widgetgrid, Button_XRD_plot, Button_XRD_rietveld, Button_XRD_pdf
     
