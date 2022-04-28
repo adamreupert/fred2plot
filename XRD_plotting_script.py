@@ -91,52 +91,28 @@ def normalization(impdir, expdir):
             np.savetxt('{}{}_normal.csv'.format(exportpath, os.path.splitext(f)[0]), result, delimiter = ';')
 
 
-def resdaname(impdir, expdir):
-    importpath = impdir
-    onlyfiles = [f for f in listdir(importpath) if isfile(join(importpath, f))]
-    for f in onlyfiles:
-        loaded_file = np.loadtxt('{}{}'.format(importpath, f))
-        exportpath = expdir + str(f)
-        if os.path.isdir(exportpath[:-3]) == 0:
-            os.mkdir(exportpath[:-3])
-        exportpath = expdir + str(f[:-3]) + '/rename/'
-        if os.path.isdir(exportpath[:-1]) == 0:
-            os.mkdir(exportpath[:-1])
-        exportpath += '/'
-        np.savetxt('{}{}.csv'.format(exportpath, os.path.splitext(f)[0]), loaded_file, delimiter = ';')   
-#     Graph
-#     fig = Figure(figsize = (4, 4), dpi = 100)  
-#     y = [-i for i in range(101)]
-#     plot1 = fig.add_subplot(111)
-#     plot1.plot(y)
-
-#     canvas = FigureCanvasTkAgg(fig, master = widgetgrid)     
-#     canvas.draw()
-#     toolbarFrame = Frame(master=widgetgrid)
-#     toolbar = NavigationToolbar2Tk(canvas, toolbarFrame)
-
 #Plotting of a 2x2 grid with all four graphs
-def single_plot(impdir, expdir):
+def single_plot(impdir, expdir, fig, xlim1, xlim2, ylim1, ylim2):
     importpath = impdir
-    onlyfiles = [placeholder for placeholder in listdir(importpath) if isfile(join(importpath, placeholder))]
-    fig = Figure(figsize = (4, 4), dpi = 100)  
-    plot1 = fig.add_subplot(111)
-    #fig, (ax1) = plt.subplots(nrows= 1, ncols= 1, figsize=(4,4), dpi = 100)
+    onlyfiles = [placeholder for placeholder in listdir(importpath) if isfile(join(importpath, placeholder))]  
     for placeholder in onlyfiles:    
         importpath = expdir + str(placeholder[:-3]) + '/rename/'
         onlyfiles = [f for f in sorted(os.listdir(importpath)) if isfile(join(importpath, f))]
         for f in onlyfiles:
             loaded_file = np.loadtxt('{}{}'.format(importpath, f), delimiter = ';')
             f = f[:-27]
+            plot1 = fig.add_subplot(111)
             plot1.plot(loaded_file[:,0],(loaded_file[:,1]),'-',linewidth=0.7, label = f)
             labeltext = f[3:]
-            plot1.set_xlim(4.5,35)
-            #ax1.text((ax1.get_xlim()[1]-(ax1.get_xlim()[1]*0.025)), 0.5 + addition, labeltext, color= dataline[0].get_color(),ha = 'right')
-            #addition = addition - 1.1
+            ylim1 = float(ylim1)
+            ylim2 = float(ylim2)
+            xlim1 = float(xlim1)
+            xlim2 = float(xlim2)
+            plot1.set_ylim(ylim1,ylim2)
+            plot1.set_xlim(xlim1,xlim2)
             plot1.set_xlabel('2 Theta / [°]')
             plot1.set_ylabel('Intensity / [a.u.]')
             plot1.set(yticks=[])
-            #plot1.plot(data)
-            plt.savefig(exportpath + 'multiplot_XRD.svg', dpi=300, bbox_inches='tight')
-            #plt.savefig(exportpath + 'multiplot_XRD.png', dpi=300, bbox_inches='tight')
-
+            fig.savefig(expdir + 'singleplot_XRD.svg', dpi=300, bbox_inches='tight')
+            return fig
+            

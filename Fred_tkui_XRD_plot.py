@@ -50,7 +50,7 @@ def widget_ui(mainwindow):
     
     def data_generate():
         print('XRD generated or updated')
-        if Label_inputdir_result['text'] == 'Nothing selected':
+        if Label_inputdir_result['text'] == 'Nothing selected':                
             print('You did not specify import directory')
         elif Label_exportdir_result['text'] == 'Nothing selected':
             print('You did not specify export directory')
@@ -69,7 +69,9 @@ def widget_ui(mainwindow):
                     XRD_plotting_script.normalization(Label_inputdir_result['text'], Label_exportdir_result['text'])
                 if option_svgexp.get():
                     print("Image is exported as SVG")
-                    XRD_plotting_script.single_plot(Label_inputdir_result['text'], Label_exportdir_result['text'])
+                    fig.clear()
+                    XRD_plotting_script.single_plot(Label_inputdir_result['text'], Label_exportdir_result['text'], fig, Entry_plotoptions_x1.get(), Entry_plotoptions_x2.get(), Entry_plotoptions_y1.get(), Entry_plotoptions_y2.get())
+                    fig.canvas.draw()
                 if option_pngexp.get():
                     print("Image is exported as PNG") 
                     XRD_plotting_script.single_plot(Label_inputdir_result['text'], Label_exportdir_result['text'])
@@ -139,11 +141,7 @@ def widget_ui(mainwindow):
     #BG Label
     Label_leftBG = Label(widgetgrid, bg = "#a8a8a8")
     # Graph
-    fig = Figure(figsize = (4, 4), dpi = 100)  
-    y = [-i for i in range(101)]
-    plot1 = fig.add_subplot(111)
-    plot1.plot(y)
-
+    fig = Figure(figsize = (4, 4), dpi = 100)
     canvas = FigureCanvasTkAgg(fig, master = widgetgrid)     
     canvas.draw()
     toolbarFrame = Frame(master=widgetgrid)
