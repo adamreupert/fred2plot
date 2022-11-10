@@ -115,7 +115,7 @@ def plot():
             #ax1.text(-0.08, 0.97, string.ascii_uppercase[0]+')', transform=ax1.transAxes, size=15)
     fig.subplots_adjust(hspace=0.25)
     exportpath = './'  
-    plt.savefig(exportpath + 'VS4_001_001_001_XRD_uncut.svg', dpi=100, bbox_inches='tight')
+    plt.savefig(exportpath + 'name_001_001_001_XRD_uncut.svg', dpi=100, bbox_inches='tight')
     importpath = './0_xy/'
     onlyfiles = [placeholder for placeholder in sorted(os.listdir(importpath)) if isfile(join(importpath, placeholder))]
     addition = 0
@@ -138,7 +138,7 @@ def plot():
             #ax1.text(-0.08, 0.97, string.ascii_uppercase[0]+')', transform=ax1.transAxes, size=15)
     fig.subplots_adjust(hspace=0.25)
     exportpath = './'  
-    plt.savefig(exportpath + 'VS4_001_001_001_XRD_cut.svg', dpi=100, bbox_inches='tight')
+    plt.savefig(exportpath + 'name_001_001_001_XRD_cut.svg', dpi=100, bbox_inches='tight')
 
 #def simple():
     #print("Module loaded")
