@@ -42,7 +42,7 @@ Thanks to [Stack Overflow](https://stackoverflow.com/). It helped me solving pro
 
 ## License
 [CC BY-NC](https://creativecommons.org/licenses/by-nc/4.0/legalcode) is applied for this project meaning you are free to share and adapt the material under the following terms:
-- Attribution — You must give appropriate credit by referencing to this [project](https://gitlab.com/Sumada/fred2plot), provide a link to the [license](https://creativecommons.org/licenses/by-nc/4.0/legalcode), and indicate if changes were made. 
+- Attribution — You must give appropriate credit by referencing to this [project](https://github.com/adamreupert/fred2plot), provide a link to the [license](https://creativecommons.org/licenses/by-nc/4.0/legalcode), and indicate if changes were made. 
 - NonCommercial — You may not use the material for commercial purposes. 
 
 ***
