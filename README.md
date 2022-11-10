@@ -32,9 +32,6 @@ Examples will follow once the user interface is working out. Here is a small pre
 - Integration of users (Kadi4mat)
 - Integration of user collections and linking (Kadi4mat)
 
-## Contributing
-If you want to contribute you can either fork it and develop your own version or if you want to contribute to the main branch just write me and we can discuss potential improvements.
-
 ## Authors and acknowledgment
 Main author: Adam Reupert
 
