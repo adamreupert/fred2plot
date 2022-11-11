@@ -8,9 +8,10 @@ The framework for experimental data to plot (FRED2Plot), is designed to automati
 This project is still in development!
 
 ## Visuals
-Examples of FRED2Plot- and personal experimental data created in our laboratories funded by [POLiS](https://www.postlithiumstorage.org/en/).
+Examples of Plots created with my code snippets for my master thesis. After fixing the UI those will be integrated in the Fred2plot sotware.
 
-![alt text](Github/example.png "Preview UI")
+![alt text](Github/NMR_example.svg "NMR example")
+![alt text](Github/fig_04.png "Multiplot example")
 
 
 ## Installation
