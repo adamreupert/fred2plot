@@ -8,7 +8,7 @@ The framework for experimental data to plot (FRED2Plot), is designed to automati
 This project is still in development!
 
 ## Visuals
-Examples of FRED2Plot- and personal experimental data created in our laboratories funded by POLiS.
+Examples of FRED2Plot- and personal experimental data created in our laboratories funded by [POLiS](https://www.postlithiumstorage.org/en/).
 
 ![alt text](Github/example.png "Preview UI")
 
