@@ -12,7 +12,7 @@ Examples of Plots created with my code snippets for my master thesis. After fixi
 
 ![alt text](Github/NMR_example.svg "NMR example")
 <br>
-![alt text](Github/fig_06.svg "Multiplot example")
+![alt text](Github/fig_06.png "Multiplot example")
 
 
 ## Installation
