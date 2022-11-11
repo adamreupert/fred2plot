@@ -11,6 +11,7 @@ This project is still in development!
 Examples of Plots created with my code snippets for my master thesis. After fixing the UI those will be integrated in the Fred2plot sotware.
 
 ![alt text](Github/NMR_example.svg "NMR example")
+<br>
 ![alt text](Github/fig_06.svg "Multiplot example")
 
 
