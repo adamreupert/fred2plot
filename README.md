@@ -8,7 +8,7 @@ The framework for experimental data to plot (FRED2Plot), is designed to automati
 This project is still in development!
 
 ## Visuals
-Examples of Plots created with my code snippets for my master thesis. After fixing the UI those with scripts developed in my PhD will be integrated in the Fred2plot software.
+Examples of Plots created with my code snippets for my master thesis. After fixing the UI those scripts will be integrated in the Fred2plot software.
 
 ![alt text](Github/NMR_example.svg "NMR example")
 <br>
