@@ -2,13 +2,13 @@
 FRamework for Experimental Data to Plot (FRED2Plot)
 
 ## Description
-The framework for experimental data to plot (FRED2Plot), is designed to automatically process XRD, PDF, NMR, Raman, FT-IR & electrochemical Data and, if wanted, uploads them to [Kadi4mat](https://kadi.iam-cms.kit.edu/).
+The goal of the framework for experimental data to plot (FRED2Plot), is the automatical processing/ploting of XRD, PDF, NMR, Raman, FT-IR & electrochemical data inputs and, if wanted, uploading them to a [Kadi4mat](https://kadi.iam-cms.kit.edu/) instance.
 
 ## Project status
 This project is still in development!
 
 ## Visuals
-Examples of Plots created with my code snippets for my master thesis. After fixing the UI those scripts will be integrated in the Fred2plot software.
+Examples of plots created with code snippets for my master thesis. After fixing the UI those scripts will be integrated in the Fred2plot software.
 
 ![alt text](Github/NMR_example.svg "NMR example")
 <br>
@@ -25,7 +25,7 @@ pip3 install -r requirements.txt
 ```
 
 ## Usage
-Examples will follow once the user interface is working out. Here is a small preview of the current state:
+Examples will follow once the user interface is fully functioning. Here is a small preview of the current state of the UI:
 
 ![alt text](Github/example.png "Preview UI")
 
