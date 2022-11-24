@@ -1,4 +1,4 @@
-# FRED2Plot <img src="https://github.com/adamreupert/fred2plot/blob/main/Github/logo.png" width="23"/>
+# FRED2Plot <img src="https://github.com/adamreupert/fred2plot/blob/main/Github/logo.png" width="28"/>
 FRamework for Experimental Data to Plot (FRED2Plot)
 
 ## Description
