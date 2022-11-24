@@ -1,5 +1,5 @@
 # FRED2Plot
-FRamework for Experimental Data to Plot (FRED2Plot)
+FRamework for Experimental Data to Plot (FRED2Plot) <img src="https://github.com/adamreupert/fred2plot/blob/main/Github/logo.png" width="13"/>
 
 ## Description
 The goal of the framework for experimental data to plot (FRED2Plot), is the automatical processing/ploting of XRD, PDF, NMR, Raman, FT-IR & electrochemical data inputs and, if wanted, uploading them to a [Kadi4mat](https://kadi.iam-cms.kit.edu/) instance.
